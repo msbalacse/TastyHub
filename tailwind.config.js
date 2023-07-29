@@ -7,6 +7,9 @@ module.exports = {
         "primary-background": "var(--primary-background)",
         "primary-color": "var(--primary-color)",
       },
+      boxShadow: {
+        primary: "0px 25px 50px -12px rgba(255, 119, 34, 0.886)",
+      },
     },
   },
   plugins: [],

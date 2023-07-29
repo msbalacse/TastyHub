@@ -1,10 +1,10 @@
 import React from "react";
-import Search from "../components/Search";
+import SearchBox from "../components/SearchBox";
 
 const Home = () => {
   return (
     <div>
-      <Search />
+      <SearchBox />
       Home
     </div>
   );

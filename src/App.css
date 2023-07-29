@@ -2,6 +2,6 @@
 
 @layer components {
   .app {
-    @apply bg-primary-background w-screen h-screen;
+    @apply max-w-full max-h-full;
   }
 }
