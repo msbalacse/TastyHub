@@ -2,6 +2,6 @@
 
 @layer components {
   .app {
-    @apply max-w-full max-h-full;
+    @apply max-w-full max-h-screen;
   }
 }

@@ -1,22 +1,18 @@
 import React, { useContext } from "react";
 import SearchBox from "../components/SearchBox";
 import { ApiDataContext } from "../context/ApiDataContext";
+import ProductCart from "../components/ProductCart/ProductCart";
 
 const Home = () => {
   const { apiData } = useContext(ApiDataContext);
   return (
-    <div>
+    <div className="bg-primary-background">
       <SearchBox />
-      <div>
-        {apiData.map((data) => {
-          const { productName } = data;
-          return (
-            <div>
-              <h1>{productName}</h1>
-            </div>
-          );
-        })}
-      </div>
+      <section className="flex flex-wrap gap-4 p-4">
+        {apiData.map((data) => (
+          <ProductCart key={data.id} data={data} />
+        ))}
+      </section>
     </div>
   );
 };
