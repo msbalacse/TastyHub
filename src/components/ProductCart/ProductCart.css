@@ -8,6 +8,6 @@
     @apply w-[300px];
   }
   .cart > button {
-    @apply p-2 text-xs text-white bg-indigo-500;
+    @apply p-2 text-xs text-white rounded-md bg-indigo-500;
   }
 }

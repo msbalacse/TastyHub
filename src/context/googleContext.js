@@ -1,31 +1,49 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { auth, provider } from "../firebase";
-import { signInWithPopup, signOut } from "firebase/auth";
+import { onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
 
 const GoogleContext = createContext();
 
 const GoogleProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
   const [isAuth, setIsAuth] = useState(
     JSON.parse(localStorage.getItem("isAuth")) || false
   );
 
-  function handleSignIn() {
-    signInWithPopup(auth, provider).then((result) => {
-      console.log(result);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+      setLocalData(user);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  const setLocalData = (user) => {
+    localStorage.setItem("username", user?.displayName);
+    localStorage.setItem("email", user?.email);
+    localStorage.setItem("user_profile", user?.photoURL);
+  };
+
+  async function handleSignIn() {
+    await signInWithPopup(auth, provider).then((result) => {
       setIsAuth(true);
       localStorage.setItem("isAuth", true);
     });
   }
 
-  function handleSignout() {
-    signOut(auth);
+  async function handleSignout() {
+    await signOut(auth).then(() => {
+      localStorage.removeItem("username");
+      localStorage.removeItem("email");
+      localStorage.removeItem("user_profile");
+    });
     setIsAuth(false);
     localStorage.setItem("isAuth", false);
   }
 
   return (
     <GoogleContext.Provider
-      value={{ handleSignIn, handleSignout, isAuth, auth }}
+      value={{ handleSignIn, handleSignout, isAuth, user }}
     >
       {children}
     </GoogleContext.Provider>

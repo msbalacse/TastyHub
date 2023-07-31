@@ -1,11 +1,26 @@
 import React from "react";
 import "./ProductCart.css";
+import { useAuth } from "../../Hooks/useAuth";
+import { useCart } from "../../Hooks/useCart";
+import {toast} from"react-toastify";
 
 const ProductCart = ({ data }) => {
   const { id, price, productName, imageUrl, details } = data;
 
-  function handleAddCart() {
-    console.log("Add Cart " + id);
+  const { user } = useAuth();
+  const { addCart } = useCart();
+
+  const cartData = {
+    ...data,
+    username: user?.displayName,
+    email: user?.email,
+    userImage: user?.photoURL,
+    uuid: user?.uid,
+  };
+
+  function handleAddCart(cartData) {
+    addCart(cartData);
+    toast.success("product added successfully")
   }
 
   return (
@@ -14,7 +29,9 @@ const ProductCart = ({ data }) => {
       <p>Name : {productName}</p>
       <p>Details : {details.substring(0, 25)}...</p>
       <p>Price : {price}$</p>
-      <button onClick={handleAddCart}>Add Cart</button>
+      {user ? (
+        <button onClick={() => handleAddCart(cartData)}>Add Cart</button>
+      ) : null}
     </div>
   );
 };

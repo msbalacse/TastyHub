@@ -1,18 +1,19 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./Profile.css";
 import { FcGoogle } from "react-icons/fc";
-import { GoogleContext } from "../../context/googleContext";
+import { useAuth } from "../../Hooks/useAuth";
 
 const Profile = () => {
-  const { handleSignIn, handleSignout, isAuth, auth } =
-    useContext(GoogleContext);
+  const { handleSignIn, handleSignout, isAuth } = useAuth();
+  const username = localStorage.getItem("username");
+  const email = localStorage.getItem("email");
+  const photoURL = localStorage.getItem("user_profile");
   if (isAuth) {
-    const { displayName, email, photoURL } = auth.currentUser;
     return (
       <div className="user">
         <div className="user__profile">
-          <img src={photoURL} alt={displayName} />
-          <h1>{displayName}</h1>
+          <img src={photoURL} alt={username} />
+          <h1>{username}</h1>
           <p>{email}</p>
           <div className="signout__btn" onClick={handleSignout}>
             <FcGoogle size={"20px"} /> <p className="text-sm">Logout</p>
