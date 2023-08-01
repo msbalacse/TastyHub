@@ -2,7 +2,7 @@
 
 @layer components {
   .profile {
-    @apply w-full h-screen bg-primary-background;
+    @apply w-full h-screen;
   }
   .general {
     @apply flex items-center justify-center w-full h-screen gap-4 p-2 bg-white rounded-md cursor-pointer;
@@ -11,7 +11,7 @@
     @apply py-2;
   }
   .user__profile {
-    @apply flex flex-col items-center justify-center gap-2 p-2 py-4 bg-primary-color;
+    @apply flex flex-col items-center justify-center gap-2 p-2 py-4 bg-white shadow shadow-primary-color;
   }
   .user__profile > img {
     @apply rounded-full;
