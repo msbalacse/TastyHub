@@ -12,48 +12,49 @@ import SearchList from "./components/SearchList/SearchList";
 import Logo from "./components/Logo";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useAuth } from "./Hooks/useAuth";
 import Preloader from "./components/preloader/Preloader";
+import { useState } from "react";
 
 function App() {
-  const { user } = useAuth();
+  const [loading, setLoading] = useState(true);
+
+  if (loading) {
+    setInterval(() => {
+      setLoading(false);
+    }, 2000);
+    return <Preloader />;
+  }
 
   return (
     <div className="app">
       <ApiDataProvider>
         <CartProvider>
-          {user ? (
-            <>
-              <Router>
-                <Navbar />
-                <div className="p-2 md:ml-20">
-                  <Logo />
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/wish-list" element={<CartList />} />
-                    <Route path="/notification" element={<Notification />} />
-                    <Route path="/profile" element={<Profile />} />
-                    <Route path="/menu" element={<Menu />} />
-                    <Route path="/search-list" element={<SearchList />} />
-                  </Routes>
-                </div>
-              </Router>
-              <ToastContainer
-                position="top-right"
-                autoClose={1000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
-              />
-            </>
-          ) : (
-            <Preloader />
-          )}
+          <Router>
+            <Navbar />
+            <div className="p-2 md:ml-20">
+              <Logo />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/wish-list" element={<CartList />} />
+                <Route path="/notification" element={<Notification />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/menu" element={<Menu />} />
+                <Route path="/search-list" element={<SearchList />} />
+              </Routes>
+            </div>
+          </Router>
+          <ToastContainer
+            position="top-right"
+            autoClose={1000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
         </CartProvider>
       </ApiDataProvider>
     </div>
