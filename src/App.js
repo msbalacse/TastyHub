@@ -14,6 +14,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Preloader from "./components/preloader/Preloader";
 import { useState } from "react";
+import Checkout from "./pages/Checkout/Checkout";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -40,6 +41,7 @@ function App() {
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/menu" element={<Menu />} />
                 <Route path="/search-list" element={<SearchList />} />
+                <Route path="/checkout" element={<Checkout />} />
               </Routes>
             </div>
           </Router>

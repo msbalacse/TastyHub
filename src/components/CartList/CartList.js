@@ -5,18 +5,22 @@ import Cart from "./Cart";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 import { useAuth } from "../../Hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 const CartList = () => {
   const { reload, setReload } = useContext(ApiDataContext);
+  const [cartreload, setCartreload] = useState(false);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
+  const navigation = useNavigate();
 
   const { user } = useAuth();
 
   useEffect(() => {
     fetchCartData();
     setReload(!reload);
-  }, []);
+    console.log("cart data loaded");
+  }, [cartreload]);
 
   async function fetchCartData() {
     const data = await getDocs(
@@ -34,18 +38,32 @@ const CartList = () => {
     }
   }
 
+  function handleCheckout() {
+    navigation("/checkout");
+  }
+
   return (
     <div>
-      <h1>CartList</h1>
+      <h1 className="my-4 text-3xl font-bold underline">CartList</h1>
       <div>
         {cart
           ?.filter((data) => data.username === user.displayName)
           ?.map((data) => (
-            <Cart key={data.id} data={data} total={total} setTotal={setTotal} />
+            <Cart
+              key={data.id}
+              data={data}
+              total={total}
+              setTotal={setTotal}
+              cartreload={cartreload}
+              setCartreload={setCartreload}
+            />
           ))}
       </div>
-      {cart ? (
-        <div className="bg-indigo-500 w-fit text-white font-bold p-2 rounded-md mt-12 mb-24">
+      {cart.length > 0 ? (
+        <div
+          className="p-2 mt-12 mb-24 font-bold text-white bg-indigo-500 rounded-md w-fit"
+          onClick={handleCheckout}
+        >
           Checkout: {total}$
         </div>
       ) : null}
