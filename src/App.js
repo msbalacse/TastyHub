@@ -21,7 +21,7 @@ function App() {
   if (loading) {
     setInterval(() => {
       setLoading(false);
-    }, 2000);
+    }, 3000);
     return <Preloader />;
   }
 
