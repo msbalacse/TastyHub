@@ -34,8 +34,8 @@
 .preloaderCart {
   display: block;
   margin: 0 auto 1.5em auto;
-  width: 2em;
-  height: 2em;
+  width: 4em;
+  height: 4em;
 }
 .preloaderCart__lines,
 .preloaderCart__top,

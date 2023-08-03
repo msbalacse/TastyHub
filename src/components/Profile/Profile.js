@@ -1,6 +1,6 @@
 import React from "react";
 import "./Profile.css";
-import { FcGoogle } from "react-icons/fc";
+import { GrGoogle } from "react-icons/gr";
 import { useAuth } from "../../Hooks/useAuth";
 import Title from "../Title/Title";
 
@@ -17,7 +17,7 @@ const Profile = () => {
           <h1>{username}</h1>
           <p>{email}</p>
           <div className="signout__btn" onClick={handleSignout}>
-            <FcGoogle size={"20px"} /> <p className="text-sm">Logout</p>
+            <GrGoogle size={"20px"} /> <p className="text-sm">Logout</p>
           </div>
         </div>
         <Title data={"Your Orders"} />
@@ -26,7 +26,7 @@ const Profile = () => {
   } else {
     return (
       <div className="general" onClick={handleSignIn}>
-        <FcGoogle size={"25px"} /> <p>Google SignIn</p>
+        <GrGoogle size={"25px"} /> <p>Google SignIn</p>
       </div>
     );
   }

@@ -15,6 +15,16 @@ module.exports = {
       fontFamily: {
         nunito: "Nunito, sans-serif",
       },
+      textShadow: {
+        sm: "1px 1px 2px rgba(0, 0, 0, 0.2)",
+        md: "2px 2px 4px rgba(0, 0, 0, 0.2)",
+        lg: "3px 3px 6px rgba(0, 0, 0, 0.3)",
+      },
+      filter: {
+        grayscale: "grayscale(100%)",
+        blur: "blur(4px)",
+        // Add more custom filter options as needed
+      },
     },
   },
   plugins: [],

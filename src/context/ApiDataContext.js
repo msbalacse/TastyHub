@@ -8,6 +8,8 @@ const ApiDataProvider = ({ children }) => {
   const [apiData, setApiData] = useState([]);
   const [reload, setReload] = useState(false);
   const [search, setSearch] = useState("");
+  const [cart, setCart] = useState([]);
+  const [total, setTotal] = useState(0);
 
   const dataRef = useRef(collection(db, "products"));
 
@@ -39,6 +41,10 @@ const ApiDataProvider = ({ children }) => {
         reload,
         search,
         setSearch,
+        cart,
+        setCart,
+        total,
+        setTotal,
       }}
     >
       {children}

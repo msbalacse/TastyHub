@@ -4,4 +4,7 @@
   .checkout {
     @apply p-2 text-center;
   }
+  .checkout > .total_amount {
+    @apply text-4xl font-extrabold;
+  }
 }

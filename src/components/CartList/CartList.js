@@ -8,10 +8,9 @@ import { useNavigate } from "react-router-dom";
 import Title from "../Title/Title";
 
 const CartList = () => {
-  const { reload, setReload } = useContext(ApiDataContext);
+  const { reload, setReload, cart, setCart, total, setTotal } =
+    useContext(ApiDataContext);
   const [cartreload, setCartreload] = useState(false);
-  const [cart, setCart] = useState([]);
-  const [total, setTotal] = useState(0);
   const navigation = useNavigate();
 
   const { user } = useAuth();

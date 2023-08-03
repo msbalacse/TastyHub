@@ -26,6 +26,6 @@
     @apply py-2 text-xl font-bold border-b border-stone-500 w-fit;
   }
   .signout__btn {
-    @apply flex items-center justify-center gap-2 p-2 bg-white rounded-md;
+    @apply flex items-center justify-center gap-2 p-2 text-white bg-indigo-500 rounded-md;
   }
 }
