@@ -4,7 +4,7 @@ import Title from "../Title/Title";
 
 const Menu = () => {
   return (
-    <div>
+    <div className="mb-24">
       <Title data={"Menu"} />
       <MenuItems type={"veg"} />
       <MenuItems type={"non-veg"} />

@@ -36,7 +36,7 @@ function App() {
               <Logo />
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/wish-list" element={<CartList />} />
+                <Route path="/cart-list" element={<CartList />} />
                 <Route path="/notification" element={<Notification />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/menu" element={<Menu />} />

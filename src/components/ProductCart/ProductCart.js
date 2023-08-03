@@ -3,6 +3,7 @@ import "./ProductCart.css";
 import { useAuth } from "../../Hooks/useAuth";
 import { useCart } from "../../Hooks/useCart";
 import { toast } from "react-toastify";
+import { BsPlus } from "react-icons/bs";
 
 const ProductCart = ({ data }) => {
   const { id, price, productName, imageUrl, details } = data;
@@ -30,7 +31,13 @@ const ProductCart = ({ data }) => {
       <p>Details : {details.substring(0, 25)}...</p>
       <p>Price : {price} $</p>
       {user ? (
-        <button onClick={() => handleAddCart(cartData)}>Add Cart</button>
+        <button
+          className="flex items-center justify-center gap-2 p-4 w-fit"
+          onClick={() => handleAddCart(cartData)}
+        >
+          <BsPlus size={"25px"} />
+          <p>Add Cart</p>
+        </button>
       ) : null}
     </div>
   );

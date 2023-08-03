@@ -2,7 +2,7 @@
 
 @layer components {
   .product__cart {
-    @apply w-[250px] flex flex-col flex-wrap gap-4 bg-white p-4;
+    @apply w-[250px] flex flex-col flex-wrap gap-4 bg-cart-color p-4;
   }
   .product__cart > img {
     @apply w-full h-[150px] object-cover;
@@ -11,7 +11,7 @@
     @apply p-2 text-xs text-white bg-indigo-500 rounded-md;
   }
   .product__cart > h1 {
-    @apply text-xs capitalize;
+    @apply text-xs w-[200px] capitalize;
   }
   .product__cart > p {
     @apply text-xs;

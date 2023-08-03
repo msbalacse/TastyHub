@@ -49,14 +49,16 @@ const Cart = ({ data, setTotal, total, cartreload, setCartreload }) => {
   }, []);
   return (
     <>
-      <div className="flex flex-wrap justify-between gap-4 p-2 my-2 bg-white">
-        <div className="flex gap-2">
+      <div className="flex flex-wrap justify-between gap-4 p-2 my-2 bg-cart-color">
+        <div className="flex gap-2 ">
           <img
             className="w-[100px] h-[100px] object-cover"
             src={data.imageUrl}
             alt=""
           />
-          <p className="self-start font-bold capitalize">{data.productName}</p>
+          <p className="w-[200px] self-start font-bold capitalize">
+            {data.productName}
+          </p>
         </div>
         <div className="flex items-center gap-4">
           <div className="flex flex-col items-center self-center gap-2">

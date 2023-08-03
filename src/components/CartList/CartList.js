@@ -43,7 +43,7 @@ const CartList = () => {
   }
 
   return (
-    <div>
+    <div className="relative mb-20">
       <Title data={"Cart"} />
       <div>
         {cart
@@ -61,7 +61,7 @@ const CartList = () => {
       </div>
       {cart.length > 0 ? (
         <div
-          className="p-2 mt-12 mb-24 font-bold text-white bg-indigo-500 rounded-md w-fit"
+          className="fixed z-40 p-2 font-bold text-white bg-indigo-500 right-4 top-4 w-fit"
           onClick={handleCheckout}
         >
           Checkout: {total}$

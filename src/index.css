@@ -11,7 +11,9 @@
 }
 
 :root {
-  --primary-background: #e3e6e6;
+  --primary-background: #ffffffe6;
+  /* --primary-color: #e1cd4b; */
+  --cart: #f4f4f4;
   --primary-color: #ff7824;
   --secondary-color: #f98c49;
 }
