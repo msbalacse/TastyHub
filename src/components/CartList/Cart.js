@@ -56,10 +56,10 @@ const Cart = ({ data, setTotal, total, cartreload, setCartreload }) => {
             src={data.imageUrl}
             alt=""
           />
-          <p className="self-start font-bold">{data.productName}</p>
+          <p className="self-start font-bold capitalize">{data.productName}</p>
         </div>
         <div className="flex items-center gap-4">
-          <div className="flex flex-col self-center gap-2">
+          <div className="flex flex-col items-center self-center gap-2">
             <div className="flex items-center gap-2">
               <span
                 className="p-2 cursor-pointer bg-primary-background"
@@ -75,7 +75,7 @@ const Cart = ({ data, setTotal, total, cartreload, setCartreload }) => {
                 +
               </span>
             </div>
-            <div>Price : {data.price}$</div>
+            <div className="font-bold">Price : {data.price}$</div>
           </div>
           <div onClick={() => handleDelete({ data })}>
             <RiDeleteBin5Line />

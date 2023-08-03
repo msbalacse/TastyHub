@@ -13,6 +13,12 @@ const SearchBox = () => {
     navigation("/search-list");
   }
 
+  function handlekeydown(e) {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  }
+
   return (
     <div className="flex gap-3 m-4 rounded-md p-2 max-w-[500px] shadow-primary text-primary-color items-center bg-white ">
       <input
@@ -21,6 +27,7 @@ const SearchBox = () => {
         type="text"
         value={data}
         onChange={(e) => setData(e.target.value)}
+        onKeyDown={handlekeydown}
       />
       <div onClick={handleSearch}>
         <BiSearch size={"20px"} />

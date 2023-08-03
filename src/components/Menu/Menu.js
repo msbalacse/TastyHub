@@ -1,10 +1,11 @@
 import React from "react";
 import MenuItems from "../MenuItems/MenuItems";
+import Title from "../Title/Title";
 
 const Menu = () => {
   return (
     <div>
-      <h1 className="my-4 text-3xl font-bold underline">Menu</h1>
+      <Title data={"Menu"} />
       <MenuItems type={"veg"} />
       <MenuItems type={"non-veg"} />
       <MenuItems type={"drinks"} />

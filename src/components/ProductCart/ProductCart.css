@@ -2,13 +2,16 @@
 
 @layer components {
   .product__cart {
-    @apply w-[300px] flex flex-wrap gap-4 bg-white p-4;
+    @apply w-[250px] flex flex-col flex-wrap gap-4 bg-white p-4;
   }
   .product__cart > img {
-    @apply w-[150px] h-[150px] object-cover;
+    @apply w-full h-[150px] object-cover;
   }
   .product__cart > button {
     @apply p-2 text-xs text-white bg-indigo-500 rounded-md;
+  }
+  .product__cart > h1 {
+    @apply text-xs capitalize;
   }
   .product__cart > p {
     @apply text-xs;

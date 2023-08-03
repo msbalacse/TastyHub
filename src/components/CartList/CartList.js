@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./CartList.css";
 import { ApiDataContext } from "../../context/ApiDataContext";
 import Cart from "./Cart";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 import { useAuth } from "../../Hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import Title from "../Title/Title";
 
 const CartList = () => {
   const { reload, setReload } = useContext(ApiDataContext);
@@ -44,7 +44,7 @@ const CartList = () => {
 
   return (
     <div>
-      <h1 className="my-4 text-3xl font-bold underline">CartList</h1>
+      <Title data={"Cart"} />
       <div>
         {cart
           ?.filter((data) => data.username === user.displayName)

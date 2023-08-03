@@ -11,6 +11,9 @@ module.exports = {
       boxShadow: {
         primary: "0px 25px 50px -12px rgba(255, 119, 34, 0.886)",
       },
+      fontFamily: {
+        nunito: "Nunito, sans-serif",
+      },
     },
   },
   plugins: [],

@@ -26,9 +26,9 @@ const ProductCart = ({ data }) => {
   return (
     <div className="product__cart" key={id}>
       <img src={imageUrl} alt={productName} />
-      <p>Name : {productName}</p>
+      <h1>Name : {productName}</h1>
       <p>Details : {details.substring(0, 25)}...</p>
-      <p>Price : {price}$</p>
+      <p>Price : {price} $</p>
       {user ? (
         <button onClick={() => handleAddCart(cartData)}>Add Cart</button>
       ) : null}

@@ -2,6 +2,6 @@
 
 @layer components {
   .search__list {
-    @apply bg-indigo-400;
+    @apply p-4;
   }
 }

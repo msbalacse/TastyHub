@@ -2,6 +2,7 @@ import React from "react";
 import "./Profile.css";
 import { FcGoogle } from "react-icons/fc";
 import { useAuth } from "../../Hooks/useAuth";
+import Title from "../Title/Title";
 
 const Profile = () => {
   const { handleSignIn, handleSignout, isAuth } = useAuth();
@@ -19,9 +20,7 @@ const Profile = () => {
             <FcGoogle size={"20px"} /> <p className="text-sm">Logout</p>
           </div>
         </div>
-        <div className="header">
-          <h1>Your Orders</h1>
-        </div>
+        <Title data={"Your Orders"} />
       </div>
     );
   } else {
