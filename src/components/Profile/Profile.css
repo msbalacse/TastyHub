@@ -5,7 +5,7 @@
     @apply w-full h-screen;
   }
   .general {
-    @apply flex items-center justify-center w-full h-screen gap-4 p-2 bg-white rounded-md cursor-pointer;
+    @apply flex justify-center w-full h-[500px] items-center gap-4 p-2 text-primary-color rounded-md cursor-pointer;
   }
   .user {
     @apply py-2;

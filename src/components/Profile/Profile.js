@@ -26,7 +26,10 @@ const Profile = () => {
   } else {
     return (
       <div className="general" onClick={handleSignIn}>
-        <GrGoogle size={"25px"} /> <p>Google SignIn</p>
+        <p>
+          <GrGoogle size={"25px"} />
+        </p>
+        <p className="mt-[2px]">SignIn</p>
       </div>
     );
   }
