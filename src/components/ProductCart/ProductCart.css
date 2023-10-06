@@ -2,9 +2,9 @@
 
 @layer components {
   .product__cart {
-    @apply w-[250px] flex flex-col flex-wrap gap-4 bg-cart-color p-4;
+    @apply flex flex-wrap gap-4 bg-cart-color p-4;
   }
-  .product__cart > img {
+  .product__cart img {
     @apply w-full h-[150px] object-cover;
   }
   .product__cart > button {
